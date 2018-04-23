@@ -1,0 +1,33 @@
+.blog-article-info-item {
+  padding: 0 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.blog-article-info-item-title {
+  font-size: 1.8em;
+}
+
+.blog-article-info-item-title a {
+  text-decoration: none;
+  color: rgb(74, 103, 178);
+}
+
+.blog-article-info-item-time {
+  display: inline-block;
+  height: 30px;
+  font-size: 1.3em;
+}
+
+.blog-article-info-item-label {
+  display: inline-block;
+  height: 30px;
+  font-size: 1.3em;
+}
+
+.blog-article-info-item-desc {
+  font-size: 1.3em;
+}
+
+.blog-article-info-item-desc-more {
+  float: right;
+}

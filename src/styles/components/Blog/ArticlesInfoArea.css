@@ -1,0 +1,14 @@
+.blog-article-info-area {
+  width: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: rgb(255, 255, 255);
+}
+
+.blog-antd-spin {
+  width: 100%;
+  text-align: center;
+  padding: 30px 50px;
+  margin: 20px 0;
+}
