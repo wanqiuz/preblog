@@ -6,9 +6,9 @@ export const login = (action) => {
     {
       // method: "GET",
       // mode: "no-cors",//可以在这设置跨域
-      // headers: {
-      //   "Content-Type": "application/x-www-form-urlencoded"
-      // },
+      headers: {
+        "Content-Type": "text/plain"
+      },
       //params: action.payload.params
     }
   ).then(response => response.json())

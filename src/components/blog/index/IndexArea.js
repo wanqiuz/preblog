@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Spin } from 'antd';
 
-import ArticlesInfoList from './ArticlesInfoList';
-import ArticlesInfoPagination from './ArticlesInfoPagination';
-import { changeCurrentPage } from '../../redux/actions/blog';
+import IndexList from './IndexList';
+import IndexPagination from './IndexPagination';
+import { changeCurrentPage } from '../../../redux/actions/blog';
 
-import '../../styles/components/Blog/ArticlesInfoArea.css';
+import '../../../styles/components/blog/index/IndexArea.css';
 
-class ArticlesInfoArea extends Component {
+class IndexArea extends Component {
   render() {
     const defaultPageSize = 4;
     const { loading, error, articleList } = this.props.issuesWrapper;
@@ -28,12 +28,12 @@ class ArticlesInfoArea extends Component {
 
     return (
       <div className="blog-article-info-area">
-        <ArticlesInfoList 
+        <IndexList 
           issuesWrapper={this.props.issuesWrapper} 
           defaultPageSize={defaultPageSize}
           currentPage={this.props.currentPage} 
         />
-        <ArticlesInfoPagination 
+        <IndexPagination 
           currentPage={this.props.currentPage}
           defaultPageSize={defaultPageSize}
           total={articleList.length}
@@ -54,4 +54,4 @@ export default connect(state => {
   return {
     changeCurrentPage: bindActionCreators(changeCurrentPage, dispatch),
   };
-})(ArticlesInfoArea);
+})(IndexArea);

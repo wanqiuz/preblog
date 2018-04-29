@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import HomeBanner from '../components/Home/HomeBanner';
+import HomeBanner from '../components/home/HomeBanner';
 import { push } from 'react-router-redux';
 
 class Home extends Component {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-import '../../styles/components/Blog/BlogSiderBanner.css';
+import '../../../styles/components/blog/index/IndexBanner.css';
 
-class BlogSiderBanner extends Component {
+class IndexBanner extends Component {
   render() {
     return (
       <div className="blog-sider-banner">
@@ -15,4 +15,4 @@ class BlogSiderBanner extends Component {
   }
 }
 
-export default BlogSiderBanner;
+export default IndexBanner;

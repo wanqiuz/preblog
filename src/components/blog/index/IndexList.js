@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Divider } from 'antd';
 
-import ArticlesInfoItem from './ArticlesInfoItem';
+import IndexItem from './IndexItem';
 
-import '../../styles/components/Blog/ArticlesInfoList.css';
+import '../../../styles/components/blog/index/IndexList.css';
 
-class ArticlesInfoList extends Component {
+class IndexList extends Component {
   render() {
     const { loading, error, articleList } = this.props.issuesWrapper;
 
@@ -19,7 +19,7 @@ class ArticlesInfoList extends Component {
     const endArticleNumber = startArticleNumber + defaultPageSize < articleList.length ? startArticleNumber + defaultPageSize : articleList.length;
     for (let i = startArticleNumber; i < endArticleNumber; ++i) {
       articleItemComponents.push(
-        <ArticlesInfoItem 
+        <IndexItem 
           key={articleList[i].id}
           number={articleList[i].id}
           title={articleList[i].title}
@@ -39,4 +39,4 @@ class ArticlesInfoList extends Component {
   }
 }
 
-export default ArticlesInfoList;
+export default IndexList;

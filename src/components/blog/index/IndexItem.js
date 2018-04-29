@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { Icon, Divider } from 'antd';
 
-import '../../styles/components/Blog/ArticlesInfoItem.css';
+import '../../../styles/components/blog/index/IndexItem.css';
 
-class ArticlesInfoItem extends Component {
+class IndexItem extends Component {
   render() {
     return (
       <div className="blog-article-info-item">
@@ -20,9 +20,9 @@ class ArticlesInfoItem extends Component {
         </div>
         <div className="blog-article-info-item-label">
           <Icon type="bars" />
-          &nbsp;{this.props.category}&nbsp;
+            &nbsp;{this.props.category}&nbsp;
           <Icon type="tag-o" />
-          &nbsp;C++&nbsp;
+            &nbsp;C++&nbsp;
         </div>
         <div className="blog-article-info-item-desc">
           <p>
@@ -40,7 +40,7 @@ class ArticlesInfoItem extends Component {
   }
 }
 
-ArticlesInfoItem.propTypes = {
+IndexItem.propTypes = {
   number: PropTypes.number,
   title: PropTypes.string,
   time: PropTypes.string,
@@ -48,4 +48,4 @@ ArticlesInfoItem.propTypes = {
   desc: PropTypes.string,
 }
 
-export default ArticlesInfoItem;
+export default IndexItem;

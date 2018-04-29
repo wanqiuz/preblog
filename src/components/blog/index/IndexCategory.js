@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Icon } from 'antd';
+import { connect } from 'react-redux';
 
-import '../../styles/components/Blog/BlogSiderCategory.css';
+import '../../../styles/components/blog/index/IndexCategory.css';
 
-class BlogSiderCategory extends Component {
+class IndexCategory extends Component {
   render() {
+    const { loading, error, articleList } = this.props.issuesWrapper;
+    
     return (
       <div className="blog-sider-area">
         <div className="blog-sider-title">
@@ -32,4 +35,10 @@ class BlogSiderCategory extends Component {
   }
 }
 
-export default BlogSiderCategory;
+//export default IndexCategory;
+
+export default connect(state => {
+  return {
+    issuesWrapper: state.loadIssuesReducer,
+  };
+})(IndexCategory);

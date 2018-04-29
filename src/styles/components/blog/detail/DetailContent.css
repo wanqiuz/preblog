@@ -68,7 +68,7 @@
 }
 
 .blog-article-body p code,  
-.blog-article-body ul code  {
+.blog-article-body ul code {
   display: inline-block;
   margin: 0 2px;
   padding: 0 4px;
@@ -101,6 +101,12 @@
 }
 
 .blog-article-body p>img {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.blog-article-body li>img {
   max-width: 80%;
   display: block;
   margin: 0 auto;

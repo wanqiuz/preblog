@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Pagination } from 'antd';
 
-import '../../styles/components/Blog/ArticlesInfoPagination.css';
+import '../../../styles/components/blog/index/IndexPagination.css';
 
-class ArticlesInfoPagination extends Component {
+class IndexPagination extends Component {
   constructor() {
     super();
     this.onChange = this.onChange.bind(this);
@@ -28,4 +28,4 @@ class ArticlesInfoPagination extends Component {
   }
 }
 
-export default ArticlesInfoPagination;
+export default IndexPagination;

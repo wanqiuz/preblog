@@ -4,8 +4,8 @@ import { Router, Route, IndexRoute } from 'react-router';
 import Frame from '../layouts/Frame';
 import Home from '../views/Home';
 import Blog from '../views/Blog';
-import BlogIndex from '../components/Blog/BlogIndex';
-import BlogArticle from '../components/Blog/BlogArticle';
+import BlogIndex from '../components/Blog/index/Index';
+import BlogDetail from '../components/Blog/detail/Detail';
 
 class Index extends Component {
   render() {
@@ -15,7 +15,7 @@ class Index extends Component {
           <IndexRoute component={Home} />
           <Route path='/blog' component={Blog}>
             <IndexRoute component={BlogIndex}/>
-            <Route path="articles/:number" component={BlogArticle}/>
+            <Route path="articles/:number" component={BlogDetail}/>
           </Route>
         </Route>
       </Router>

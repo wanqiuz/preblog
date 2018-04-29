@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Row, Col } from 'antd';
 
-import { loadIssues } from '../../redux/actions/blog';
-import ArticleContent from './ArticleContent';
-import BlogSider from './BlogSider';
+import { loadIssues } from '../../../redux/actions/blog';
+import DetailContent from './DetailContent';
+import IndexSider from '../index/IndexSider';
 
-class BlogArticle extends Component {
+class Detail extends Component {
   componentDidMount() {
     this.props.loadIssues();
   }
@@ -16,14 +16,14 @@ class BlogArticle extends Component {
     return (
       <div className="blog-container">
         <Row>
-          <Col span={16}>
-            <ArticleContent 
+          <Col span={18}>
+            <DetailContent 
               issuesWrapper={this.props.issuesWrapper}
               number={this.props.params.number}
             />
           </Col>
-          <Col span={8}>
-            <BlogSider />
+          <Col span={6}>
+            <IndexSider />
           </Col>
         </Row>
       </div>
@@ -39,4 +39,4 @@ export default connect(state => {
   return {
     loadIssues: bindActionCreators(loadIssues, dispatch),
   };
-})(BlogArticle);
+})(Detail);
