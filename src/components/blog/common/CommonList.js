@@ -3,35 +3,35 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import CategoryItem from './CategoryItem';
+import CommonItem from './CommonItem';
 
-import '../../../styles/components/blog/category/CategoryList.css';
+import '../../../styles/components/blog/common/CommonList.css';
 
-class CategoryList extends Component {
+class CommonList extends Component {
 
   render() {
     const { loading, error, articleList} = this.props.issuesWrapper;
 
-    const categoryItemComponents = this.props.items.map(item => {
+    const commonItemComponents = this.props.items.map(item => {
       return (
-        <CategoryItem article={item}/>
+        <CommonItem article={item}/>
       );
     });
 
     return (
-      <div className="blog-category-list">
-        <h2 id={this.props.title} className="blog-category-list-title">
+      <div className="blog-common-list">
+        <h2 id={this.props.title} className="blog-common-list-title">
           {this.props.title}
         </h2>
-        <div className="blog-category-list-item">
-          {categoryItemComponents}
+        <div className="blog-common-list-item">
+          {commonItemComponents}
         </div>
       </div>
     );
   }
 }
 
-CategoryList.propTypes = {
+CommonList.propTypes = {
   title: PropTypes.string,
   items: PropTypes.array,
 }
@@ -40,4 +40,4 @@ export default connect(state => {
   return {
     issuesWrapper: state.loadIssuesReducer,
   };
-})(CategoryList);
+})(CommonList);

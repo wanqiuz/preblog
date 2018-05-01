@@ -7,6 +7,7 @@ import Blog from '../views/Blog';
 import BlogIndex from '../components/blog/index/Index';
 import BlogDetail from '../components/blog/detail/Detail';
 import BlogCategory from '../components/blog/category/Category';
+import BlogTag from '../components/blog/tag/Tag';
 
 class Index extends Component {
   render() {
@@ -18,6 +19,7 @@ class Index extends Component {
             <IndexRoute component={BlogIndex} />
             <Route path="detail/:number" component={BlogDetail} />
             <Route path="category" component={BlogCategory} />
+            <Route path="tag" component={BlogTag} />
           </Route>
         </Route>
       </Router>

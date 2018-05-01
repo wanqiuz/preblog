@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { Icon, Tag, Spin } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import { scrollToAnchor } from '../../../api/api';
 import { loadTags } from '../../../redux/actions/blog';
 
 import '../../../styles/components/blog/index/IndexTag.css';
@@ -48,8 +50,12 @@ class IndexTag extends Component {
           {
             tags.map(item => { 
               return (
-                <div key={{item}} style={{ margin: '5px 5px' }}>
-                  <Tag><a href="">{item}</a></Tag>
+                <div key={item} style={{ margin: '5px 5px' }}>
+                  <Tag>
+                    <Link key={item} to={`/blog/tag/#${item}`} onClick={() => scrollToAnchor(item)}>
+                      {item}
+                    </Link>
+                  </Tag>
                 </div>
               );
             })

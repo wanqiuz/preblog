@@ -21,13 +21,10 @@ class IndexCategory extends Component {
         categoryCounts[categoryTypes.indexOf(articleList[i].category)] = categoryCounts[categoryTypes.indexOf(articleList[i].category)] + 1;
       }
     }
-    // console.log("begin")
-    // console.log(articleList)
-    // console.log(categoryTypes)
-    // console.log(categoryCounts)
+
     const categoryComponents = categoryTypes.map((item, index) => {
       return (
-        <Link key="item" to={`/blog/category/#${item}`} onClick={() => scrollToAnchor(item)}>
+        <Link key={item} to={`/blog/category/#${item}`} onClick={() => scrollToAnchor(item)}>
           <span className="blog-index-category-content-name">{item}</span>
           <span className="blog-index-category-content-badge">{categoryCounts[index]}</span>
         </Link>

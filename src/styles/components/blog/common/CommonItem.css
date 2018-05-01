@@ -1,0 +1,40 @@
+.blog-common-item-time,
+.blog-common-item-title,
+.blog-common-item-common,
+.blog-common-item-tag {
+  display: inline-block;
+  height: 30px;
+  font-size: 16px;
+}
+
+.blog-common-item-time span {
+  margin: 0 5px;
+  color: #888;
+}
+
+.blog-common-item-title a {
+  margin: 0 5px;
+  font-weight: bold;
+  color: #223253;
+  transition: 0.3s ease;
+}
+
+.blog-common-item-common a {
+  margin: 0 5px;
+  padding: 0 5px;
+  border-radius: 4px;
+  background-color: #9e9d9d;
+  color: #fff;
+  font-size: 90%;
+  transition: 0.3s ease;
+}
+
+.blog-common-item-tag a {
+  margin: 0 5px;
+  padding: 0 5px;
+  border-radius: 4px;
+  background-color: #c6cbe9;
+  color: #fff;
+  font-size: 90%;
+  transition: 0.3s ease;
+}

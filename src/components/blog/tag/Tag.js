@@ -6,8 +6,8 @@ class Category extends Component {
   render() {
     return (
       <Common               
-        type="category"
-        headline="Categories"
+        type="tag"
+        headline="Tags"
       />
     );
   }
