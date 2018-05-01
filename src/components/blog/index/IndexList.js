@@ -20,12 +20,7 @@ class IndexList extends Component {
       articleItemComponents.push(
         <IndexItem 
           key={articleList[i].id}
-          number={articleList[i].id}
-          title={articleList[i].title}
-          updateTime={articleList[i].updateTime}
-          category={articleList[i].category}
-          labels={articleList[i].labels}
-          body={articleList[i].body}
+          article={articleList[i]}
         />
       );
     }

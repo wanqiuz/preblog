@@ -1,4 +1,4 @@
-import { LOAD_ISSUES, LOAD_ISSUE, CHANGE_CURRENT_PAGE, LOAD_TAGS } from '../types/blog';
+import { LOAD_ISSUES, LOAD_ISSUE, CHANGE_CURRENT_PAGE } from '../types/blog';
 
 export function loadIssues() {
   return {
@@ -24,13 +24,4 @@ export function changeCurrentPage(currentPage) {
     type: CHANGE_CURRENT_PAGE,
     payload: currentPage,
   };
-}
-
-export function loadTags() {
-  return {
-    type: LOAD_TAGS,
-    payload: {
-      url: 'http://127.0.0.1:8080/api/v1/tags',
-    }
-  }
 }

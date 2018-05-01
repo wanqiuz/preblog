@@ -15,7 +15,7 @@ class HomeBanner extends Component {
             <p>分享技术与生活</p>
             <div className="home-banner-link">
               <div className="home-banner-link-item">
-                <a target="_black" rel="noopener noreferrer" hrel="https://github.com/wanqiu">
+                <a target="_black" rel="noopener noreferrer" href="https://github.com/wanqiuz">
                   Github
                 </a>
               </div>

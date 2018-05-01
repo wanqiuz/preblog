@@ -20,16 +20,23 @@ class CommonItem extends Component {
         );
     });
 
+    // console.log("jianshen")
+    // console.log(this.props.withTitle);
     return (
       <div className="blog-common-item">
         <time className="blog-common-item-time">
           <Icon type="calendar" style={{fontSize: 16, color: "#888"}} />
           <span>{article.updateTime}</span>
         </time>
-        <div className="blog-common-item-title">
-          <Icon type="file-markdown" />
-          <Link to={`/blog/detail/${article.id}`}>{article.title}</Link>
-        </div>
+        {
+          this.props.withTitle ? (
+            <div className="blog-common-item-title">
+              <Icon type="file-markdown" />
+              <Link to={`/blog/detail/${article.id}`}>{article.title}</Link>
+            </div>
+          ) : null
+        }
+        
         <div className="blog-common-item-common">
           <Icon type="bars" style={{fontSize: 16, color: "#9e9d9d"}} />
           <Link to={`/blog/category/#${article.category}`} onClick={() => scrollToAnchor(article.category)}>{article.category}</Link>
