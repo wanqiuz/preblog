@@ -1,18 +1,5 @@
 import { LOAD_ISSUES, LOAD_ISSUE, CHANGE_CURRENT_PAGE, LOAD_TAGS } from '../types/blog';
 
-// export function loadIssues() {
-//   return {
-//     type: LOAD_ISSUES,
-//     payload: {
-//       url: 'https://api.github.com/repos/axuebin/articles/issues',
-//       // params: {
-//       //     creator: 'axuebin',
-//       //     labels: 'blog',
-//       // },
-//     },
-//   };
-// }
-
 export function loadIssues() {
   return {
     type: LOAD_ISSUES,

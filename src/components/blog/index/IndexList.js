@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import { Divider } from 'antd';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import IndexItem from './IndexItem';
 
 import '../../../styles/components/blog/index/IndexList.css';
 
 class IndexList extends Component {
+
   render() {
     const { loading, error, articleList } = this.props.issuesWrapper;
 
-    // return articleList.map(item => (
-    //   <Preview {...item} key={item.id} push={this.props.push} />
-    // ));;
-    console.log(articleList);
+    //console.log(articleList);
     const articleItemComponents = [];
     const defaultPageSize = this.props.defaultPageSize;
     const startArticleNumber = (this.props.currentPage - 1)* defaultPageSize;
@@ -31,12 +30,20 @@ class IndexList extends Component {
       );
     }
     return (
-      <div className="blog-article-info-list">
-        <Divider />
+      <div className="blog-index-list">
         {articleItemComponents}
       </div>
     );
   }
 }
 
-export default IndexList;
+IndexList.propTypes = {
+  defaultPageSize: PropTypes.number,
+}
+
+export default connect(state => {
+  return {
+    issuesWrapper: state.loadIssuesReducer,
+    currentPage: state.changeCurrentPageReducer.currentPage,
+  };
+})(IndexList);

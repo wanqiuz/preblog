@@ -1,0 +1,15 @@
+.blog-category-list {
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.blog-category-list-title {
+  font-size: 26px;
+  color: rgb(107, 107, 107);
+  border-bottom: 1px solid #eee;
+  margin-bottom: 25px;
+}
+
+.blog-category-list-item {
+
+}

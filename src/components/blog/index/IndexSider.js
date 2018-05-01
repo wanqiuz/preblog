@@ -9,7 +9,7 @@ import '../../../styles/components/blog/index/IndexSider.css';
 class IndexSider extends Component {
   render() {
     return (
-      <div className="blog-sider">
+      <div className="blog-index-sider">
         <IndexBanner />
         <IndexCategory />
         <IndexTag />

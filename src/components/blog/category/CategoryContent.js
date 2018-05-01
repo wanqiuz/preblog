@@ -1,60 +1,47 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Row, Col, Spin } from 'antd';
+import { Divider } from 'antd';
 
-import { loadIssue } from '../../../redux/actions/blog';
+import CategoryList from './CategoryList';
 
-import '../../../styles/components/blog/detail/DetailContent.css';
+import '../../../styles/components/blog/category/CategoryContent.css';
 
 class ArticleContent extends Component {
 
-  componentDidMount() {
-    this.props.loadIssue(this.props.number);
-  }
-
   render() {
-    const { loading, error, article} = this.props.issueWrapper;
+    const { loading, error, articleList} = this.props.issuesWrapper;
 
-    if (typeof(article) === "undefined" || error) {
-      return <p className="message">Oops, something is wrong.</p>;
+    let categoryList = [];
+    let categoryTypes = [];
+    for (let i = 0; i < articleList.length; ++i) {
+      if (categoryTypes.indexOf(articleList[i].category) < 0) {
+        categoryTypes.push(articleList[i].category);
+        categoryList[categoryList.length] = new Array(articleList[i]);
+      } else {
+        categoryList[categoryTypes.indexOf(articleList[i].category)].push(articleList[i]);
+      }
     }
-    
-    if (loading) {
+
+    const categoryListComponents = categoryList.map((item, index) => {
+      const title = categoryTypes[index];
       return (
-        <div className="blog-antd-spin">
-          <Spin tip="Loading..." />
-        </div>
+        <CategoryList key={title} title={title} items={item} />
       );
-    }  
-
-
-    const body = article.body;
-
+    })
     return (
-      //<div className="blog-container">
-        <div className="blog-article-area">
-          <div className="blog-article-title">
-            {article.title}
-          </div>
-          <div className="blog-article-time">
-            {article.updateTime.split('T')[0]}
-          </div>
-          <div className="blog-article-body"    
-          dangerouslySetInnerHTML={{ __html: marked(body) }} 
-          />
-        </div>
-      //</div>
+      <div className="blog-category-content">
+        <h1>
+          Categories
+        </h1>
+        {categoryListComponents}
+      </div>
     );
   }
 }
 
 export default connect(state => {
   return {
-    issueWrapper: state.loadIssueReducer,
-  };
-}, dispatch => {
-  return {
-    loadIssue: bindActionCreators(loadIssue, dispatch),
+    issuesWrapper: state.loadIssuesReducer,
   };
 })(ArticleContent);

@@ -1,12 +1,5 @@
 import { LOAD_ISSUES, LOAD_ISSUES_SUCCESS, LOAD_ISSUES_FAILURE, LOAD_ISSUE, LOAD_ISSUE_SUCCESS, LOAD_ISSUE_FAILURE,CHANGE_CURRENT_PAGE, LOAD_TAGS, LOAD_TAGS_SUCCESS, LOAD_TAGS_FAILURE } from '../types/blog';
 
-// const loadIssuesInitialState = {
-//   loading: true,
-//   error: false,
-//   articleList: [],
-//   currentPage: 1,
-// };
-
 const loadIssuesInitialState = {
   loading: true,
   error: false,

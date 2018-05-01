@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Row, Col } from 'antd';
+import { Row, Col, Spin } from 'antd';
 
-import { loadIssues } from '../../../redux/actions/blog';
+import { loadIssue } from '../../../redux/actions/blog';
 import DetailContent from './DetailContent';
 import IndexSider from '../index/IndexSider';
 
 class Detail extends Component {
   componentDidMount() {
-    this.props.loadIssues();
+    this.props.loadIssue(this.props.params.number);
   }
 
   render() {
+    const { loading, error, article} = this.props.issueWrapper;
+
+    if (typeof(article) === "undefined" || error) {
+      return <p className="message">Oops, something is wrong.</p>;
+    }
+    
+    if (loading) {
+      return (
+        <div className="blog-antd-spin">
+          <Spin tip="Loading..." />
+        </div>
+      );
+    }  
+
     return (
       <div className="blog-container">
         <Row>
           <Col span={18}>
-            <DetailContent 
-              issuesWrapper={this.props.issuesWrapper}
-              number={this.props.params.number}
-            />
+            <DetailContent />
           </Col>
           <Col span={6}>
             <IndexSider />
@@ -33,10 +44,10 @@ class Detail extends Component {
 
 export default connect(state => {
   return {
-    issuesWrapper: state.loadIssuesReducer,
+    issueWrapper: state.loadIssueReducer,
   };
 }, dispatch => {
   return {
-    loadIssues: bindActionCreators(loadIssues, dispatch),
+    loadIssue: bindActionCreators(loadIssue, dispatch),
   };
 })(Detail);

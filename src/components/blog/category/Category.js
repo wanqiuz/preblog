@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Row, Col } from 'antd';
+import { Row, Col, Spin } from 'antd';
 
 import { loadIssues } from '../../../redux/actions/blog';
 import CategoryContent from './CategoryContent';
@@ -13,6 +13,20 @@ class Category extends Component {
   }
 
   render() {
+    const { loading, error, articleList } = this.props.issuesWrapper;
+
+    if (typeof(articleList) === "undefined" || error) {
+      return <p className="message">Oops, something is wrong.</p>;
+    }
+    
+    if (loading) {
+      return (
+        <div className="blog-antd-spin">
+          <Spin tip="Loading..." />
+        </div>
+      );
+    }   
+
     return (
       <div className="blog-container">
         <Row>

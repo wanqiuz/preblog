@@ -1,14 +1,15 @@
 @import '~highlight.js/styles/atom-one-dark.css';
 
-.blog-article-area {
+.blog-detail {
   width: 98%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  background-color: rgb(255, 255, 255);
+  background-color: #f8f8fd;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3), 0 0 30px rgba(10, 10, 0, 0.1) inset;
 }
 
-.blog-article-title {
+.blog-detail-title {
   width: 100%;
   height: 100px;
   font-size: 2em;
@@ -16,59 +17,59 @@
   line-height: 100px;
 }
 
-.blog-article-time {
+.blog-detail-time {
   width: 100%;
   text-align: center;
   font-size: 1.2em;
 }
 
-.blog-article-body {
+.blog-detail-body {
   width: 100%;
   padding: 10px 40px 20px 40px;
   line-height: 1.6;
 }
 
-.blog-article-body h1 {
+.blog-detail-body h1 {
   padding-bottom: 0.3em;
   font-size: 2em;
   border-bottom: 1px solid #eaecef;
 }
 
-.blog-article-body h2 {
+.blog-detail-body h2 {
   padding-bottom: 0.3em;
   font-size: 1.5em;
   border-bottom: 1px solid #eaecef;
 }
 
-.blog-article-body h3 {
+.blog-detail-body h3 {
   font-size: 1.25em;
 }
 
-.blog-article-body h4 {
+.blog-detail-body h4 {
   font-size: 1.15em;
 }
 
-.blog-article-body p {
+.blog-detail-body p {
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-.blog-article-body ul, ol {
+.blog-detail-body ul, ol {
   padding-left: 1.2em;
 }
 
-.blog-article-body li {
+.blog-detail-body li {
   margin-top: .25em;
 }
 
-.blog-article-body blockquote {
+.blog-detail-body blockquote {
   padding: 1px 10px;
   border-left: 2px solid black;
   background: rgb(200, 200, 200);
 }
 
-.blog-article-body p code,  
-.blog-article-body ul code {
+.blog-detail-body p code,  
+.blog-detail-body ul code {
   display: inline-block;
   margin: 0 2px;
   padding: 0 4px;
@@ -79,7 +80,7 @@
   border: 1px solid #ddd;
 }
 
-.blog-article-body pre code {
+.blog-detail-body pre code {
   display: block;
   margin: 20px 0px;
   overflow-x: auto;
@@ -93,32 +94,32 @@
   border-radius: 10px;
 }
 
-.blog-article-body table {
+.blog-detail-body table {
   width: 100%;
   border: 1px solid;
   font-size: 1.2em;
   border-collapse: collapse;
 }
 
-.blog-article-body p>img {
+.blog-detail-body p>img {
   max-width: 80%;
   display: block;
   margin: 0 auto;
 }
 
-.blog-article-body li>img {
+.blog-detail-body li>img {
   max-width: 80%;
   display: block;
   margin: 0 auto;
 }
 
-.blog-article-body th, .blog-article-body td {
+.blog-detail-body th, .blog-detail-body td {
   height: 50px;
   padding: 0px 20px;
   text-align: center;
   vertical-align: middle;
 }
 
-.blog-article-body table>tbody>tr:nth-child(odd)>td, .blog-article-body table>tbody>tr:nth-child(odd)>th {
+.blog-detail-body table>tbody>tr:nth-child(odd)>td, .blog-detail-body table>tbody>tr:nth-child(odd)>th {
   background-color: #f9f9f9;
 }

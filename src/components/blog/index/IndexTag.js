@@ -15,8 +15,16 @@ class IndexTag extends Component {
 
   render() {
     const { loading, error, tagTypes} = this.props.tagTypesWrapper;
-    // //console.log("start testing")
-    //console.log(tagTypes);;
+
+    const { articleList } = this.props.issuesWrapper;
+    let tags = [];
+    articleList.map(item => {
+      const itemTags = item.tags.split("\n").filter(item => item.length > 0);
+      itemTags.map(item => {
+        if (tags.indexOf(item) < 0)
+          tags.push(item);
+      });
+    });
 
     if (typeof(tagTypes) === "undefined" || error) {
       return <p className="message">Oops, something is wrong.</p>;
@@ -31,14 +39,14 @@ class IndexTag extends Component {
     }
 
     return (
-      <div className="blog-sider-area">
-        <div className="blog-sider-title">
+      <div className="blog-index-tag">
+        <div className="blog-index-tag-title">
           <Icon type="tag-o" />
           &nbsp;标签
         </div>
-        <div className="blog-sider-tag-content">
+        <div className="blog-index-tag-content">
           {
-            tagTypes.map(item => { 
+            tags.map(item => { 
               return (
                 <div key={{item}} style={{ margin: '5px 5px' }}>
                   <Tag><a href="">{item}</a></Tag>
@@ -52,11 +60,10 @@ class IndexTag extends Component {
   }
 }
 
-//export default BlogSiderTag;
-
 export default connect(state => {
   return {
     tagTypesWrapper: state.loadTagsReducer,
+    issuesWrapper: state.loadIssuesReducer,
   }
 }, dispatch => {
   return {

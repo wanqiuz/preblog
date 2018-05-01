@@ -1,0 +1,27 @@
+.blog-index-content {
+  width: 98%;
+  background-color: #f8f8fd;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3), 0 0 30px rgba(10, 10, 0, 0.1) inset;
+}
+
+.blog-index-content h1 {
+  margin-bottom: 0;
+  padding: 25px 0 0;
+  color: rgb(51, 51, 51);
+}
+
+.blog-index-content small {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.blog-index-promotion {
+  padding: 0 20px;
+}
+
+.blog-antd-spin {
+  width: 100%;
+  text-align: center;
+  padding: 30px 50px;
+  margin: 20px 0;
+}

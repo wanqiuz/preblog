@@ -6,7 +6,7 @@ import '../../../styles/components/blog/index/IndexBanner.css';
 class IndexBanner extends Component {
   render() {
     return (
-      <div className="blog-sider-banner">
+      <div className="blog-index-banner">
         <Link to="/blog/banner">
           全部文章
         </Link>

@@ -22,3 +22,10 @@ export const login = (action) => {
       });
     });
 };
+
+export const scrollToAnchor = (anchorName) => {
+  if (anchorName) {
+      let anchorElement = document.getElementById(anchorName);
+      if(anchorElement) { anchorElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); }
+  }
+}
