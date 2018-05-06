@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Divider } from 'antd';
+import { browserHistory } from 'react-router';
 
+import { scrollToAnchor } from '../../../api/api';
 import CommonList from './CommonList';
 
 import '../../../styles/components/blog/common/CommonContent.css';
 
 class CommonContent extends Component {
+
+  componentDidMount() {
+    scrollToAnchor(browserHistory.getCurrentLocation().hash.slice(1));
+  }
 
   render() {
     const { loading, error, articleList} = this.props.issuesWrapper;

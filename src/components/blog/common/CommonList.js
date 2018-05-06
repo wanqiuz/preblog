@@ -14,7 +14,7 @@ class CommonList extends Component {
 
     const commonItemComponents = this.props.items.map(item => {
       return (
-        <CommonItem article={item} withTitle />
+        <CommonItem key={item.title} article={item} withTitle />
       );
     });
 

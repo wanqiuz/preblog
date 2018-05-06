@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 import FrameHeader from './FrameHeader';
 
@@ -8,8 +9,8 @@ class Frame extends Component {
   render() {
     return (
       <div>
-        <FrameHeader />
-        <div className="middle">
+        { browserHistory.getCurrentLocation().pathname === "/login" ? null : <FrameHeader /> }
+        <div>
           {this.props.children}
         </div>
       </div>    

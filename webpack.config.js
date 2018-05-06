@@ -1,15 +1,21 @@
 var path = require('path');
 
+const PUBLICPATH = '/assets/'
+
 module.exports = {
   entry: './src/app.js',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/build/'
+    publicPath: 'build',
   },
-  //devtool: 'cheap-eval-source-map',
   devtool: 'source-map',
   mode: 'development',
+  devServer: {
+    historyApiFallback: {
+        index: '/index.html',
+    },
+  },
   module: {
     rules: [
     {
@@ -37,5 +43,4 @@ module.exports = {
     },
     ]
   },
-  mode: 'production'
 }

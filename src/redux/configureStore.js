@@ -1,7 +1,7 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import { routerMiddleware } from 'react-router-redux';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import ThunkMiddleware from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import { rootReducer } from './reducers/index';
@@ -13,7 +13,7 @@ import rootSaga from './sagas/index';
 const sagaMiddleware = createSagaMiddleware()
 // mount the saga middleware on the Store
 const finalCreateStore = compose(
-  applyMiddleware(sagaMiddleware, routerMiddleware(hashHistory)),
+  applyMiddleware(sagaMiddleware, routerMiddleware(browserHistory)),
   //applyMiddleware(ThunkMiddleware),
   DevTools.instrument()
 )(createStore);

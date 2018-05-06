@@ -14,14 +14,12 @@ class CommonItem extends Component {
 
     const tagComponents = article.tags.split("\n").filter(item => item.length > 0).map(item => {
         return (
-          <Link to={`/blog/tag/#${item}`} onClick={() => scrollToAnchor(item)}>
+          <Link key={item} to={`/blog/tag/#${item}`} onClick={() => scrollToAnchor(item)}>
             {item}
           </Link>
         );
     });
-
-    // console.log("jianshen")
-    // console.log(this.props.withTitle);
+    
     return (
       <div className="blog-common-item">
         <time className="blog-common-item-time">
@@ -51,7 +49,7 @@ class CommonItem extends Component {
 }
 
 CommonItem.propTypes = {
-  article: PropTypes.array,
+  article: PropTypes.object,
 }
 
 export default CommonItem;

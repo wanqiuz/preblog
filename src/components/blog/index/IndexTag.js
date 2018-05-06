@@ -32,7 +32,7 @@ class IndexTag extends Component {
           {
             tags.map(item => { 
               return (
-                <div key={item} style={{ margin: '5px 5px' }}>
+                <div key={item} style={{ margin: '5px 2px' }}>
                   <Tag>
                     <Link key={item} to={`/blog/tag/#${item}`} onClick={() => scrollToAnchor(item)}>
                       {item}

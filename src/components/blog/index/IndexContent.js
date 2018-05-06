@@ -8,7 +8,7 @@ import '../../../styles/components/blog/index/IndexContent.css';
 class IndexContent extends Component {
 
   render() {
-    const defaultPageSize = 4;
+    const defaultPageSize = 8;
 
     return (
       <div className="blog-index-content">
