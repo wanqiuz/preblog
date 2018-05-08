@@ -5,15 +5,15 @@ import { bindActionCreators } from 'redux';
 import { Form , Icon, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
 
-import BlogLogin from '../components/login/Login';
+import BlogRegister from '../components/register/Register';
 import { changeLoginForm } from '../redux/actions/blog';
 
-class Login extends Component {
+class Register extends Component {
   render() {
     const fields = this.props.fields;
     return (
       <div>
-        <BlogLogin {...fields} onChange={this.props.changeLoginForm} />
+        <BlogRegister {...fields} onChange={this.props.changeLoginForm} />
       </div>
     );
   }
@@ -26,4 +26,4 @@ export default connect(state => {
   return {
     changeLoginForm: bindActionCreators(changeLoginForm, dispatch),
   };
-})(Login);
+})(Register);

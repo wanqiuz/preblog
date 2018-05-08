@@ -1,4 +1,4 @@
-import { LOAD_ISSUES, LOAD_ISSUE, CHANGE_CURRENT_PAGE } from '../types/blog';
+import { LOAD_ISSUES, LOAD_ISSUE, CHANGE_CURRENT_PAGE, CHANGE_LOGIN_FORM } from '../types/blog';
 
 export function loadIssues() {
   return {
@@ -24,4 +24,11 @@ export function changeCurrentPage(currentPage) {
     type: CHANGE_CURRENT_PAGE,
     payload: currentPage,
   };
+}
+
+export function changeLoginForm(changedFields) {
+  return {
+    type: CHANGE_LOGIN_FORM,
+    payload: changedFields
+  }
 }

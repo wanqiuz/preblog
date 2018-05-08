@@ -5,6 +5,7 @@ import Frame from '../layouts/Frame';
 import Home from '../views/Home';
 import Blog from '../views/Blog';
 import Login from '../views/Login';
+import Register from '../views/Register';
 import BlogIndex from '../components/blog/index/Index';
 import BlogDetail from '../components/blog/detail/Detail';
 import BlogCategory from '../components/blog/category/Category';
@@ -23,6 +24,7 @@ class Index extends Component {
             <Route path="tag" component={BlogTag} />
           </Route>
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
         </Route>
       </Router>
     );

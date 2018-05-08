@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 
 import HomeBanner from '../components/home/HomeBanner';
-import { push } from 'react-router-redux';
 
 class Home extends Component {
   render() {
@@ -14,16 +11,5 @@ class Home extends Component {
     );
   }
 }
-
-// export default connect(state => {
-//   return {
-//     list: state.rootReducer.homeReducer.list,
-//   };
-// }, dispatch => {
-//   return {
-//     listActions: bindActionCreators(listActions, dispatch),
-//     push: bindActionCreators(push, dispatch),
-//   };
-// })(Home);
 
 export default Home;

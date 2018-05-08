@@ -9,7 +9,7 @@ class Frame extends Component {
   render() {
     return (
       <div>
-        { browserHistory.getCurrentLocation().pathname === "/login" ? null : <FrameHeader /> }
+        { browserHistory.getCurrentLocation().pathname === "/login" || browserHistory.getCurrentLocation().pathname === "/register" ? null : <FrameHeader /> }
         <div>
           {this.props.children}
         </div>

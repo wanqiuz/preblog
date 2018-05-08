@@ -1,21 +1,10 @@
-import { LOAD_ISSUES, LOAD_ISSUES_SUCCESS, LOAD_ISSUES_FAILURE, LOAD_ISSUE, LOAD_ISSUE_SUCCESS, LOAD_ISSUE_FAILURE,CHANGE_CURRENT_PAGE } from '../types/blog';
+import { LOAD_ISSUES, LOAD_ISSUES_SUCCESS, LOAD_ISSUES_FAILURE, LOAD_ISSUE, LOAD_ISSUE_SUCCESS, LOAD_ISSUE_FAILURE,CHANGE_CURRENT_PAGE, CHANGE_LOGIN_FORM } from '../types/blog';
 
 const loadIssuesInitialState = {
   loading: true,
   error: false,
   articleList: [],
 };
-
-const loadIssueInitialState = {
-  loading: true,
-  error: false,
-  article: null,
-};
-
-const changeCurrentPageInitialState = {
-  currentPage: 1,
-};
-
 export function loadIssuesReducer(state = loadIssuesInitialState, action = {}) {
   switch (action.type) {
     case LOAD_ISSUES: {
@@ -49,6 +38,11 @@ export function loadIssuesReducer(state = loadIssuesInitialState, action = {}) {
   }
 }
 
+const loadIssueInitialState = {
+  loading: true,
+  error: false,
+  article: null,
+};
 export function loadIssueReducer(state = loadIssueInitialState, action = {}) {
   switch (action.type) {
     case LOAD_ISSUE: {
@@ -82,6 +76,9 @@ export function loadIssueReducer(state = loadIssueInitialState, action = {}) {
   }
 }
 
+const changeCurrentPageInitialState = {
+  currentPage: 1,
+};
 export function changeCurrentPageReducer(state = changeCurrentPageInitialState, action = {}) {
   switch (action.type) {
     case CHANGE_CURRENT_PAGE: {
@@ -89,6 +86,43 @@ export function changeCurrentPageReducer(state = changeCurrentPageInitialState, 
         ...state,
         currentPage: action.payload,
       };
+    }
+
+    default: {
+      return state;
+    }    
+  }
+}
+
+const changeLoginFormInitialState = {
+  fields: {
+    username: {
+      value: "zhaopeng",
+    },
+    password: {
+      value: "123456",
+    },
+    remember: {
+      value: true,
+    }
+  },
+}
+export function changeLoginFormReducer(state = changeLoginFormInitialState, action = {}) {
+  switch (action.type) {
+    case CHANGE_LOGIN_FORM: {
+      if (typeof(action.payload.username) != "undefined") {
+        let newState = state;
+        newState.fields.username = action.payload.username;
+        return newState;
+      } else if (typeof(action.payload.password) != "undefined") {
+        let newState = state;
+        newState.fields.password = action.payload.password;
+        return newState;
+      } else if (typeof(action.payload.remember) != "undefined") {
+        let newState = state;
+        newState.fields.remember = action.payload.remember;
+        return newState;
+      }
     }
 
     default: {
