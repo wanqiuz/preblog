@@ -7,7 +7,7 @@ class HomeBanner extends Component {
       <div className="home-banner">
         <div className="home-banner-me">
           <div className="home-banner-photo">
-            <img src="./src/assets/myPhoto.png" alt="头像" />
+            <img src="./images/myPhoto.png" alt="头像" />
           </div>
           <div className="home-banner-desc">
             <h1>赵鹏</h1>
