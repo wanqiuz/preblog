@@ -1,3 +1,8 @@
+# 博客系统---运行环境
+1. Node 10.1.0
+2. JDK 1.8.0_172
+3. Maven 3.5.3
+
 # 博客系统（前端技术栈）
 
 ## React
@@ -71,6 +76,15 @@ Ant Design是蚂蚁金服出品的一款前端UI library，提供了一套非常
 ## MongoDb
 
 ## Docker
+
+Docker给自己的定义是
+
+> Docker is an open platform for developers and sysadmins of distributed applications.
+
+可以这样理解：
+
+Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上。简单的说，就是“一次构建，到处运行（Build once，run anywhere）”
+
 
 # 博客系统---模块
 ## 模块:
