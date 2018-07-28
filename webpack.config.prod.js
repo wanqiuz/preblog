@@ -1,27 +1,22 @@
 const path = require('path');
-
+const webpack = require('webpack');
+// var CompressionPlugin = require('compression-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let pathsToClean = [
-  './start',
+  './build',
 ]
 
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.join(__dirname, 'start'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
   },
-  devtool: 'cheap-module-eval-source-map',
-  mode: 'development',
-  devServer: {
-    historyApiFallback: {
-        index: '/index.html',
-    },
-    port: 9000,
-  },
+  devtool: 'cheap-module-source-map',
+  mode: 'production',
   module: {
     rules: [
       {
@@ -56,6 +51,19 @@ module.exports = {
       filename: 'index.html',
     }),
     new CleanWebpackPlugin(pathsToClean),
-
+    new webpack.DefinePlugin({ // <-- 减少 React 大小的关键
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.AggressiveMergingPlugin(),//合并块
+    // new CompressionPlugin({
+    //   asset: "[path].gz[query]",
+    //   algorithm: "gzip",
+    //   test: /\.js$|\.css$|\.html$/,
+    //   threshold: 10240,
+    //   minRatio: 0.8
+    // }),
   ],
+
 }
